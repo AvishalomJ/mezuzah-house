@@ -50,14 +50,6 @@
   "c3Save": "",
   "c3Cta": "I want this one",
   "c3Wa": "Hi! I'd like to order: Natural Olive Wood mezuzah, 150 ₪ :)",
-  "c4Title": "Bargain Corner · Single Pieces",
-  "c4Sub": "Special price for last stock",
-  "c4Desc": "Mezuzah cases of clear epoxy and wood that have warmed slightly in tone over time — a small cosmetic flaw at a price you won't find anywhere else. The product is fully intact.",
-  "c4Note": "* This does not happen with the colored epoxy models.",
-  "c4Ribbon": "Outlet · Last stock",
-  "c4Save": "Limited quantity · single pieces",
-  "c4Cta": "Grab it before it's gone",
-  "c4Wa": "Hi! I'd like to order a piece from the Bargain Corner (Outlet), 100 ₪ :)",
   "bannerOverline": "A range of colors",
   "bannerTitle": "Because every home has its own character",
   "bannerText": "From deep blue, through earthy green, to pearl white — choose the shade that speaks to you.",
@@ -111,7 +103,7 @@
   "announceText": "Limited-time launch offer · Free shipping over ₪200 · Nationwide shipping",
   "floatLabel": "Quick order",
   "pickerOverline": "Personal choice",
-  "pickerTitle": "Choose a specific mezuzah from our stock",
+  "pickerTitle": "Choose your one-of-a-kind mezuzah",
   "pickerIntro": "Each photo shows several mezuzahs available in stock. Choose the exact piece you love — and order it on WhatsApp or pay for it directly on the site.",
   "pickerAvail": "available",
   "pickerSelectBtn": "Choose a piece from the photo",
@@ -181,10 +173,6 @@
     "wood-walnut.jpg": {
       "label": "Dark Coated Wood",
       "product": "Natural Olive Wood"
-    },
-    "epoxy-clear.jpg": {
-      "label": "Clear Epoxy · Outlet",
-      "product": "Bargain Corner"
     }
   }
 }

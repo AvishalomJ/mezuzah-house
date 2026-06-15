@@ -173,29 +173,6 @@
       }
     },
     {
-      "@type": "Product",
-      "name": "Bargain Corner · Single Pieces",
-      "description": "Mezuzah cases of clear epoxy and wood that have warmed slightly in tone over time — a small cosmetic flaw at a price you won't find anywhere else. The product is fully intact.",
-      "image": "images/epoxy-clear.jpg",
-      "brand": {
-        "@type": "Brand",
-        "name": "The Mezuzah House"
-      },
-      "category": "Judaica / Mezuzah cases",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "ILS",
-        "price": "100",
-        "availability": "https://schema.org/LimitedAvailability",
-        "itemCondition": "https://schema.org/NewCondition",
-        "priceValidUntil": "2027-06-15",
-        "seller": {
-          "@type": "Organization",
-          "name": "The Mezuzah House"
-        }
-      }
-    },
-    {
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -776,7 +753,7 @@ h1, h2, .fbrand{font-family:"Bellefair","Frank Ruhl Libre",serif; font-weight:40
 
 
 <section id="picker" class="picker sec"><div class="wrap">
-  <div class="sec-head"><span class="overline">Personal choice</span><h2>Choose a specific mezuzah from our stock</h2><p>Each photo shows several mezuzahs available in stock. Choose the exact piece you love — and order it on WhatsApp or pay for it directly on the site.</p><div class="rule"></div></div>
+  <div class="sec-head"><span class="overline">Personal choice</span><h2>Choose your one-of-a-kind mezuzah</h2><p>Each photo shows several mezuzahs available in stock. Choose the exact piece you love — and order it on WhatsApp or pay for it directly on the site.</p><div class="rule"></div></div>
   <div class="pick-grid" id="pickGrid"></div>
   <p class="pick-tip">Tip: click the number next to the mezuzah you chose in the photo</p>
 </div></section>
@@ -948,7 +925,7 @@ h1, h2, .fbrand{font-family:"Bellefair","Frank Ruhl Libre",serif; font-weight:40
   /* Pick-a-Mezuzah: choose a specific AVAILABLE piece, then add to cart or
      quick-order via WhatsApp. Sold pieces are disabled. */
   (function(){
-    var PICKER = [{"img": "epoxy-blue.jpg", "label": "Blue Epoxy", "count": 3, "product": "Olive Wood & Epoxy · Large Edition", "price": "250 ₪", "sold": []}, {"img": "epoxy-white.jpg", "label": "Pearl White Epoxy", "count": 5, "product": "Olive Wood & Epoxy · Classic", "price": "200 ₪", "sold": []}, {"img": "green-emerald.jpg", "label": "Deep Green Epoxy", "count": 4, "product": "Olive Wood & Epoxy · Classic", "price": "200 ₪", "sold": [4]}, {"img": "green-sage.jpg", "label": "Sage Green Epoxy", "count": 4, "product": "Olive Wood & Epoxy · Classic", "price": "200 ₪", "sold": []}, {"img": "wood-olive.jpg", "label": "Natural Olive Wood", "count": 4, "product": "Natural Olive Wood", "price": "150 ₪", "sold": []}, {"img": "wood-walnut.jpg", "label": "Dark Coated Wood", "count": 3, "product": "Natural Olive Wood", "price": "150 ₪", "sold": []}, {"img": "epoxy-clear.jpg", "label": "Clear Epoxy · Outlet", "count": 4, "product": "Bargain Corner", "price": "100 ₪", "sold": []}];
+    var PICKER = [{"img": "epoxy-blue.jpg", "label": "Blue Epoxy", "count": 3, "product": "Olive Wood & Epoxy · Large Edition", "price": "250 ₪", "sold": []}, {"img": "epoxy-white.jpg", "label": "Pearl White Epoxy", "count": 5, "product": "Olive Wood & Epoxy · Classic", "price": "200 ₪", "sold": []}, {"img": "green-emerald.jpg", "label": "Deep Green Epoxy", "count": 4, "product": "Olive Wood & Epoxy · Classic", "price": "200 ₪", "sold": [4]}, {"img": "green-sage.jpg", "label": "Sage Green Epoxy", "count": 4, "product": "Olive Wood & Epoxy · Classic", "price": "200 ₪", "sold": []}, {"img": "wood-olive.jpg", "label": "Natural Olive Wood", "count": 4, "product": "Natural Olive Wood", "price": "150 ₪", "sold": []}, {"img": "wood-walnut.jpg", "label": "Dark Coated Wood", "count": 3, "product": "Natural Olive Wood", "price": "150 ₪", "sold": []}];
     var T = {avail:"available", select:"Choose a piece from the photo", piece:"Piece", of:"of",
              chosen:"Selected", sold:"SOLD", soldOut:"Out of stock"};
     var waNum = (typeof WA_NUMBER !== "undefined") ? WA_NUMBER : "";
