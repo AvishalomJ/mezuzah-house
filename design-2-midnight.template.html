@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; form-action 'self' https://wa.me">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=3">
@@ -741,6 +742,7 @@ h1, h2, .fbrand{font-family:"Bellefair","Frank Ruhl Libre",serif; font-weight:40
 
     function soldArr(it){ return Array.isArray(it.sold) ? it.sold : []; }
     function avail(it){ return Math.max(0, (it.count||0) - soldArr(it).length); }
+    function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
 
     PICKER.forEach(function(it, idx){
       var left = avail(it);
@@ -748,11 +750,11 @@ h1, h2, .fbrand{font-family:"Bellefair","Frank Ruhl Libre",serif; font-weight:40
       b.className = "pick-card" + (left===0 ? " soldout" : ""); b.type = "button";
       var badge = left===0 ? T.soldOut : (left + " " + T.avail);
       b.innerHTML =
-        '<div class="pick-thumb"><img src="images/'+it.img+'" alt="'+it.label+'" loading="lazy">'+
-        '<span class="pick-count">'+badge+'</span></div>'+
-        '<div class="pick-cardbody"><h3>'+it.label+'</h3>'+
-        '<div class="pick-price">'+it.price+'</div>'+
-        '<span class="pick-cta">'+T.select+' \u2190</span></div>';
+        '<div class="pick-thumb"><img src="images/'+esc(it.img)+'" alt="'+esc(it.label)+'" loading="lazy">'+
+        '<span class="pick-count">'+esc(badge)+'</span></div>'+
+        '<div class="pick-cardbody"><h3>'+esc(it.label)+'</h3>'+
+        '<div class="pick-price">'+esc(it.price)+'</div>'+
+        '<span class="pick-cta">'+esc(T.select)+' \u2190</span></div>';
       b.addEventListener("click", function(){ openModal(idx); });
       grid.appendChild(b);
     });
@@ -846,6 +848,7 @@ h1, h2, .fbrand{font-family:"Bellefair","Frank Ruhl Libre",serif; font-weight:40
     if(!modal) return;
 
     function badgeUpd(){ if(badge){ badge.textContent = cart.length; badge.style.display = cart.length ? "" : "none"; } }
+    function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
 
     function add(it){
       if(cart.some(function(x){ return ckey(x)===ckey(it); })){ toast("{{uiInCartToast}}"); openCart(); return; }
@@ -855,13 +858,13 @@ h1, h2, .fbrand{font-family:"Bellefair","Frank Ruhl Libre",serif; font-weight:40
 
     function render(){
       if(!itemsBox) return;
-      if(!cart.length){ itemsBox.innerHTML = '<p class="cart-empty">'+L.empty+'</p>'; }
+      if(!cart.length){ itemsBox.innerHTML = '<p class="cart-empty">'+esc(L.empty)+'</p>'; }
       else {
         itemsBox.innerHTML = cart.map(function(it,i){
-          return '<div class="cart-item"><img src="images/'+it.img+'" alt="">'+
-            '<div class="ci-info"><div class="ci-label">'+it.label+'</div>'+
-            '<div class="ci-sub">'+L.piece+' '+it.piece+' '+L.of+' '+it.count+'</div>'+
-            '<div class="ci-price">'+it.price+'</div></div>'+
+          return '<div class="cart-item"><img src="images/'+esc(it.img)+'" alt="">'+
+            '<div class="ci-info"><div class="ci-label">'+esc(it.label)+'</div>'+
+            '<div class="ci-sub">'+esc(L.piece)+' '+it.piece+' '+esc(L.of)+' '+it.count+'</div>'+
+            '<div class="ci-price">'+esc(it.price)+'</div></div>'+
             '<button class="ci-del" data-i="'+i+'" aria-label="הסרה">&times;</button></div>';
         }).join("");
         Array.prototype.forEach.call(itemsBox.querySelectorAll(".ci-del"), function(b){
