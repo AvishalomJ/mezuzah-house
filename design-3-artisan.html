@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>בית המזוזה · Artisan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5EDDF; --surface:#FFFDF8; --ink:#3B2F25; --muted:#7A6A57;
+  --green:#5E7A5A; --green-d:#4b6448; --wood:#8B5E3C; --terra:#C57B4E; --gold:#C9A24B;
+  --line:#E6D9C4; --wa:#25D366; --r:26px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:78px}
+body{margin:0; color:var(--ink); font-family:"Heebo",system-ui,Arial,sans-serif; line-height:1.7; overflow-x:hidden;
+  background-color:var(--paper); background-image:radial-gradient(rgba(139,94,60,.06) 1px, transparent 1px); background-size:20px 20px;}
+h1,h2,h3,.serif{font-family:"Frank Ruhl Libre",Georgia,serif; line-height:1.2; margin:0; color:var(--wood)}
+p{margin:0} img{display:block; max-width:100%} a{color:inherit; text-decoration:none}
+.wrap{max-width:1160px; margin:0 auto; padding:0 24px}
+.sec{padding:88px 0}
+.overline{font-size:.8rem; letter-spacing:.14em; color:var(--terra); font-weight:700}
+.sec-head{text-align:center; max-width:700px; margin:0 auto 50px}
+.sec-head h2{font-size:clamp(2rem,4.2vw,2.9rem); font-weight:900; margin:.35em 0; color:var(--green-d)}
+.sec-head p{color:var(--muted); font-size:1.08rem}
+.sprout{display:inline-block; margin-top:10px; color:var(--green)}
+.ic{width:20px; height:20px; fill:currentColor}
+.btn{display:inline-flex; align-items:center; gap:.55em; cursor:pointer; border:none; font-family:inherit; font-weight:700; font-size:1rem; padding:.9em 1.7em; border-radius:999px; transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-grn{background:var(--green); color:#fff; box-shadow:0 10px 24px rgba(94,122,90,.32)}
+.btn-grn:hover{background:var(--green-d)}
+.btn-wood{background:transparent; color:var(--wood); border:1.6px solid var(--wood)}
+.btn-wood:hover{background:var(--wood); color:#fff}
+
+header{position:sticky; top:0; z-index:50; background:rgba(245,237,223,.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+.nav{display:flex; align-items:center; justify-content:space-between; height:72px}
+.brand b{font-family:"Frank Ruhl Libre",serif; font-weight:900; color:var(--green-d); font-size:1.35rem; display:block; line-height:1}
+.brand span{font-size:.72rem; letter-spacing:.16em; color:var(--terra); font-weight:700}
+.nav-links{display:flex; gap:28px}
+.nav-links a{font-weight:500; color:var(--ink)}
+.nav-links a:hover{color:var(--green)}
+.nav .btn{padding:.6em 1.25em; font-size:.92rem}
+
+/* Hero */
+.hero{padding:64px 0 0}
+.hero-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center}
+.hero-media{position:relative}
+.hero-media img{width:100%; height:560px; object-fit:cover; border-radius:62% 38% 55% 45% / 55% 50% 50% 45%; box-shadow:0 24px 60px rgba(94,122,90,.22); border:6px solid var(--surface)}
+.seal{position:absolute; width:128px; height:128px; bottom:-18px; inset-inline-start:-18px; animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(-360deg)}}
+.seal text{fill:var(--green-d); font-family:"Heebo",sans-serif; font-size:8.5px; font-weight:700; letter-spacing:.5px}
+.seal .seal-mid{font-family:"Frank Ruhl Libre",serif; font-size:24px; fill:var(--terra); font-weight:900}
+.seal-disc{fill:var(--surface); stroke:var(--gold); stroke-dasharray:3 3}
+.hero-text .overline{margin-bottom:14px; display:block}
+.hero-text h1{font-size:clamp(2.1rem,4.4vw,3.4rem); font-weight:900; color:var(--green-d)}
+.hero-text h1 em{font-style:normal; color:var(--terra); position:relative}
+.hero-text h1 em::after{content:""; position:absolute; left:0; right:0; bottom:2px; height:8px; background:rgba(197,123,78,.25); border-radius:6px; z-index:-1}
+.hero-text .lead{color:var(--muted); font-size:1.15rem; max-width:30em; margin:20px 0 30px}
+.hero-cta{display:flex; gap:14px; flex-wrap:wrap}
+.trust{display:flex; gap:10px 20px; flex-wrap:wrap; margin-top:30px; color:var(--green-d); font-weight:600; font-size:.93rem}
+.trust span{display:inline-flex; align-items:center; gap:7px}
+.trust i{color:var(--gold)}
+.wave{line-height:0; margin-top:48px}
+.wave svg{width:100%; height:70px; display:block}
+
+/* Why */
+.why{background:var(--surface)}
+.why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px}
+.why-card{text-align:center; background:var(--paper); border:1.5px dashed var(--line); border-radius:var(--r); padding:34px 24px}
+.why-ic{width:76px; height:76px; border-radius:50%; margin:0 auto 16px; display:grid; place-items:center; background:#fff; border:2px solid var(--green); }
+.why-ic svg{width:34px; height:34px; fill:none; stroke:var(--green); stroke-width:1.7}
+.why-card h3{font-size:1.28rem; color:var(--green-d); margin-bottom:6px}
+.why-card p{color:var(--muted)}
+
+/* Catalog */
+.cards{display:grid; grid-template-columns:repeat(4,1fr); gap:26px}
+.card{position:relative; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; display:flex; flex-direction:column; box-shadow:0 14px 40px rgba(139,94,60,.1); transition:.25s}
+.card:hover{transform:translateY(-6px) rotate(-.4deg); box-shadow:0 26px 56px rgba(139,94,60,.2)}
+.card.flag{border-color:var(--terra)}
+.stamp{position:absolute; top:14px; inset-inline-end:14px; z-index:2; background:var(--terra); color:#fff; font-weight:700; font-size:.78rem; padding:.45em .9em; border-radius:999px; transform:rotate(6deg); box-shadow:0 6px 14px rgba(0,0,0,.15)}
+.stamp.out{background:var(--wood)}
+.card-media{height:280px; overflow:hidden}
+.card-media img{width:100%; height:100%; object-fit:cover; transition:.5s}
+.card:hover .card-media img{transform:scale(1.06)}
+.card-body{padding:22px; display:flex; flex-direction:column; flex:1}
+.card-body h3{font-size:1.24rem; color:var(--green-d)}
+.card-sub{color:var(--terra); font-weight:600; font-size:.88rem; margin:.25em 0 .7em}
+.card-desc{color:var(--muted); font-size:.94rem; flex:1}
+.note{display:block; color:var(--green); font-weight:600; font-size:.85rem; margin-top:10px}
+.tag{display:inline-flex; align-items:center; gap:8px; margin:18px 0 14px; background:var(--paper); border:1.5px dashed var(--wood); color:var(--wood); border-radius:8px 14px 14px 8px; padding:.5em 1em .5em .8em; position:relative; align-self:flex-start}
+.tag::before{content:""; width:9px; height:9px; border-radius:50%; background:#fff; border:1.5px solid var(--wood)}
+.tag .new{font-family:"Frank Ruhl Libre",serif; font-weight:900; font-size:1.6rem; color:var(--green-d)}
+.tag .old{text-decoration:line-through; color:#b6a890; font-size:1rem}
+.save{color:var(--terra); font-weight:700; font-size:.84rem; margin-bottom:14px; min-height:1.1em}
+.card .btn{width:100%; justify-content:center; margin-top:auto}
+
+/* Banner */
+.band{position:relative; min-height:430px; display:flex; align-items:center; background:url('images/green-sage.jpg') center/cover; border-block:8px solid var(--surface)}
+.band::before{content:""; position:absolute; inset:0; background:linear-gradient(270deg, rgba(60,72,52,.15), rgba(60,72,52,.86))}
+.band .wrap{position:relative}
+.band-box{max-width:540px; color:#fff}
+.band-box h2{color:#fff; font-size:clamp(1.9rem,3.6vw,2.6rem)}
+.band-box p{margin:14px 0 26px; font-size:1.1rem}
+.band-box .btn-wood{color:#fff; border-color:#fff}
+.band-box .btn-wood:hover{background:#fff; color:var(--green-d)}
+
+/* Gallery */
+.gallery{background:var(--surface)}
+.grid-g{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.gfig{position:relative; margin:0; overflow:hidden; border-radius:18px; background:var(--paper); border:4px solid #fff; box-shadow:0 10px 26px rgba(139,94,60,.12)}
+.gfig img{width:100%; height:270px; object-fit:cover; transition:.5s}
+.gfig.wide{grid-column:span 2}
+.gfig.wide img{height:330px}
+.gfig:hover img{transform:scale(1.05)}
+.gfig figcaption{position:absolute; inset-inline:0; bottom:0; padding:24px 14px 12px; color:#fff; font-weight:600; background:linear-gradient(0deg, rgba(60,47,37,.7), transparent); opacity:0; transition:.25s}
+.gfig:hover figcaption{opacity:1}
+.reviews{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px}
+.rev{background:var(--paper); border:1.5px dashed var(--line); border-radius:var(--r); padding:26px}
+.stars{color:var(--gold); letter-spacing:2px; margin-bottom:8px}
+.rev cite{display:block; margin-top:12px; font-style:normal; color:var(--green-d); font-weight:700}
+
+/* FAQ */
+.faq{max-width:780px; margin:0 auto}
+details{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:0 22px; margin-bottom:14px}
+summary{list-style:none; cursor:pointer; padding:20px 0; font-weight:700; color:var(--green-d); font-size:1.08rem; display:flex; justify-content:space-between}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+"; color:var(--terra); font-size:1.5rem; line-height:1}
+details[open] summary::after{content:"–"}
+.ans{padding:0 0 22px; color:var(--muted)}
+
+/* Final */
+.final{background:var(--surface)}
+.final-card{background:var(--green-d); color:#fff; border-radius:34px; overflow:hidden; display:grid; grid-template-columns:1fr 1fr; align-items:stretch; box-shadow:0 30px 70px rgba(75,100,72,.3)}
+.final-card .fmedia img{width:100%; height:100%; object-fit:cover; min-height:360px}
+.final-card .ftext{padding:60px 50px; display:flex; flex-direction:column; justify-content:center}
+.final-card h2{color:#fff; font-size:clamp(1.9rem,3.6vw,2.6rem)}
+.final-card p{color:#e7eee2; font-size:1.1rem; margin:14px 0 26px; max-width:28em}
+.final-card .btn{align-self:flex-start; background:#fff; color:var(--green-d)}
+.final-card .btn:hover{background:var(--gold); color:#fff}
+.reassure{margin-top:18px; color:#cfe0c9; font-weight:600; font-size:.92rem}
+
+footer{text-align:center; padding:46px 22px; color:var(--muted)}
+.fbrand{font-family:"Frank Ruhl Libre",serif; color:var(--green-d); font-weight:900; font-size:1.4rem}
+.flinks{display:flex; gap:24px; justify-content:center; margin:14px 0; flex-wrap:wrap}
+.flinks a{color:var(--wood); font-weight:600}
+
+@media (max-width:980px){.cards{grid-template-columns:repeat(2,1fr)} .grid-g{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:860px){
+  .nav-links{display:none}
+  .hero-grid{grid-template-columns:1fr} .hero-media img{height:380px}
+  .why-grid,.reviews{grid-template-columns:1fr}
+  .final-card{grid-template-columns:1fr} .final-card .ftext{padding:42px 28px}
+}
+@media (max-width:560px){.cards{grid-template-columns:1fr} .grid-g{grid-template-columns:1fr} .gfig.wide{grid-column:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 24 24"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .16 11.9C.16 5.33 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zM6.6 20.2l.36.21a9.86 9.86 0 0 0 5.02 1.38h.01c5.45 0 9.89-4.43 9.89-9.88a9.82 9.82 0 0 0-2.9-7A9.82 9.82 0 0 0 12.06 2c-5.46 0-9.9 4.43-9.9 9.89 0 1.87.53 3.7 1.52 5.28l.24.38-1 3.63 3.68-.97zM17.5 14.3c-.08-.13-.27-.2-.56-.35-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.45.13-.6.13-.13.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.51.07-.78.37-.27.3-1.02 1-1.02 2.43 0 1.43 1.04 2.81 1.19 3.01.15.2 2.05 3.13 4.97 4.39.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.76-.72 2-1.41.25-.69.25-1.28.18-1.41z"/></symbol></svg>
+
+<header><div class="wrap nav">
+  <div class="brand"><b>בית המזוזה</b><span>עבודת יד</span></div>
+  <nav class="nav-links"><a href="#catalog">הקולקציה</a><a href="#gallery">גלריה</a><a href="#faq">שאלות</a></nav>
+  <a class="btn btn-grn" data-wa="היי! הגעתי דרך האתר ואשמח לפרטים והזמנה של מזוזה 🙂"><svg class="ic"><use href="#wa"/></svg>להזמנה</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="hero-grid">
+    <div class="hero-media">
+      <img src="images/wood-olive.jpg" alt="מזוזות עץ זית טבעי בעבודת יד">
+      <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="seal-disc" cx="60" cy="60" r="56"/>
+        <defs><path id="cp" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/></defs>
+        <text><textPath href="#cp" startOffset="0">· עבודת יד · עץ זית טבעי · פריט אחד ויחיד </textPath></text>
+        <text x="60" y="68" text-anchor="middle" class="seal-mid">100%</text>
+      </svg>
+    </div>
+    <div class="hero-text">
+      <span class="overline">עבודת יד · עץ זית טבעי ושרף אפוקסי</span>
+      <h1>מזוזה שהיא <em>יצירת אמנות</em> — שמירה שמתחילה בפתח הבית</h1>
+      <p class="lead">בתי מזוזה בעבודת יד, משילוב של עץ זית אמיתי ושרף אפוקסי בגוונים מרהיבים. כל פריט נוצר בנפרד — אין שניים זהים, בדיוק כמו הבית שלכם.</p>
+      <div class="hero-cta">
+        <a class="btn btn-grn" data-wa="היי! הגעתי דרך האתר ואשמח לפרטים והזמנה של מזוזה 🙂"><svg class="ic"><use href="#wa"/></svg>להזמנה מהירה בוואטסאפ</a>
+        <a class="btn btn-wood" href="#catalog">לצפייה בקולקציה ↓</a>
+      </div>
+      <div class="trust"><span><i>✦</i>עבודת יד</span><span><i>✦</i>עץ זית אמיתי</span><span><i>✦</i>פריט ייחודי</span><span><i>✦</i>משלוח לכל הארץ</span></div>
+    </div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,30 C300,75 700,0 1080,28 C1260,42 1380,55 1440,40 L1440,70 L0,70 Z" fill="#FFFDF8"/></svg></div>
+</div></section>
+
+<section class="why sec"><div class="wrap why-grid">
+  <div class="why-card"><div class="why-ic"><svg viewBox="0 0 24 24"><path d="M12 21c-1-5-5-7-9-8 4-1 8-3 9-9 1 6 5 8 9 9-4 1-8 3-9 8z"/></svg></div><h3>100% עץ זית אמיתי</h3><p>מעובד ומלוטש ביד, עם גוון וטקסטורה טבעיים שאין להם תחליף.</p></div>
+  <div class="why-card"><div class="why-ic"><svg viewBox="0 0 24 24"><path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/></svg></div><h3>שרף אפוקסי יוקרתי</h3><p>יצוק ידנית בגוונים עשירים ועמידים — צבע שלא דוהה עם הזמן.</p></div>
+  <div class="why-card"><div class="why-ic"><svg viewBox="0 0 24 24"><path d="M12 2l2.6 7.2H22l-6 4.6 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.6h7.4z"/></svg></div><h3>פריט אחד ויחיד</h3><p>כל מזוזה נוצרת בנפרד. זו שתקבלו תהיה שלכם בלבד.</p></div>
+</div></section>
+
+<section id="catalog" class="sec"><div class="wrap">
+  <div class="sec-head"><span class="overline">הקולקציה</span><h2>בחרו את המזוזה שלכם</h2><p>מחירי השקה לזמן מוגבל. כל המחירים הם לבתי מזוזה בעבודת יד.</p><span class="sprout">❧</span></div>
+  <div class="cards">
+    <article class="card flag"><span class="stamp">מומלץ</span><div class="card-media"><img src="images/epoxy-blue.jpg" alt="עץ זית ואפוקסי מהדורה גדולה"></div><div class="card-body"><h3>עץ זית ואפוקסי · מהדורה גדולה</h3><div class="card-sub">מתאימה לקלף 15 ס״מ</div><p class="card-desc">הדגם היוקרתי שלנו: שילוב מרהיב של עץ זית אמיתי ושרף אפוקסי בגוון עשיר, עם אות ש' מוזהבת. נוכחות מלכותית בכל פתח. זמין במבחר גוונים — כחול, ירוק, לבן ועוד.</p><div class="tag"><span class="new">250 ₪</span><span class="old">300 ₪</span></div><div class="save">מבצע השקה — חיסכון של 50 ₪</div><a class="btn btn-grn" data-wa="היי! אשמח להזמין: מזוזת עץ זית ואפוקסי – מהדורה גדולה (15 ס״מ), 250 ₪ 🙂">אני רוצה את זו</a></div></article>
+    <article class="card"><div class="card-media"><img src="images/epoxy-white.jpg" alt="עץ זית ואפוקסי קלאסית"></div><div class="card-body"><h3>עץ זית ואפוקסי · קלאסית</h3><div class="card-sub">מתאימה לקלף 12 ס״מ</div><p class="card-desc">כל היופי והאיכות של דגם האפוקסי, בגודל הקלאסי המתאים לרוב הבתים. עץ זית ושרף צבעוני שלא דוהה — פריט ייחודי לכל דלת.</p><div class="tag"><span class="new">200 ₪</span><span class="old">250 ₪</span></div><div class="save">מבצע השקה — חיסכון של 50 ₪</div><a class="btn btn-grn" data-wa="היי! אשמח להזמין: מזוזת עץ זית ואפוקסי – קלאסית (12 ס״מ), 200 ₪ 🙂">אני רוצה את זו</a></div></article>
+    <article class="card"><div class="card-media"><img src="images/wood-walnut.jpg" alt="עץ זית טבעי"></div><div class="card-body"><h3>עץ זית טבעי</h3><div class="card-sub">עץ מלא עם ציפוי מגן</div><p class="card-desc">לחובבי הטבעי והנקי: עץ זית מלא בגוון חם, מלוטש ומצופה להגנה לאורך שנים. פשטות אלגנטית עם אות ש' מוזהבת.</p><div class="tag"><span class="new">150 ₪</span></div><div class="save"></div><a class="btn btn-grn" data-wa="היי! אשמח להזמין: מזוזת עץ זית טבעי, 150 ₪ 🙂">אני רוצה את זו</a></div></article>
+    <article class="card"><span class="stamp out">Outlet</span><div class="card-media"><img src="images/epoxy-clear.jpg" alt="פינת המציאות"></div><div class="card-body"><h3>פינת המציאות · דגמים בודדים</h3><div class="card-sub">מחיר מיוחד למלאי אחרון</div><p class="card-desc">בתי מזוזה מאפוקסי שקוף ועץ שצברו גוון חמים מעט עם הזמן — פגם אסתטי קטן במחיר שלא תמצאו במקום אחר. המוצר תקין לחלוטין.<span class="note">* התופעה הזו אינה קיימת בדגמי האפוקסי הצבעוני.</span></p><div class="tag"><span class="new">100 ₪</span></div><div class="save">כמות מוגבלת · דגמים בודדים</div><a class="btn btn-grn" data-wa="היי! אשמח להזמין דגם מפינת המציאות (Outlet), 100 ₪ 🙂">חטפו לפני שייגמר</a></div></article>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap"><div class="band-box">
+  <span class="overline" style="color:#f0d9b8">מבחר גוונים</span>
+  <h2>כי לכל בית יש אופי משלו</h2>
+  <p>מכחול עמוק, דרך ירוק אדמתי ועד לבן פנינה — בחרו את הגוון שמדבר אליכם.</p>
+  <a class="btn btn-wood" data-wa="היי! אשמח לשיחה אישית ולעזרה בבחירת גוון למזוזה 🙂">לשיחה אישית ובחירת גוון</a>
+</div></div></section>
+
+<section id="gallery" class="gallery sec"><div class="wrap">
+  <div class="sec-head"><span class="overline">גלריה</span><h2>כל מזוזה — סיפור בפני עצמו</h2><p>הצצה לקולקציה. בזכות העץ הטבעי והיציקה הידנית, הפריט שתקבלו יהיה ייחודי לחלוטין — שלכם בלבד.</p><span class="sprout">❧</span></div>
+  <div class="grid-g">
+    <figure class="gfig"><img src="images/wood-olive.jpg" alt="עץ זית טבעי"><figcaption>עץ זית טבעי — אין שתי פיסות זהות</figcaption></figure>
+    <figure class="gfig"><img src="images/epoxy-blue.jpg" alt="אפוקסי כחול"><figcaption>אפוקסי בגוון כחול עמוק</figcaption></figure>
+    <figure class="gfig"><img src="images/epoxy-white.jpg" alt="אפוקסי לבן פנינה"><figcaption>לבן פנינה — אלגנטיות נקייה</figcaption></figure>
+    <figure class="gfig"><img src="images/wood-walnut.jpg" alt="עץ עם ציפוי"><figcaption>עץ מלא עם ציפוי מגן</figcaption></figure>
+    <figure class="gfig wide"><img src="images/green-sage.jpg" alt="ירוק אדמתי"><figcaption>ירוק אדמתי, יצוק בעבודת יד</figcaption></figure>
+    <figure class="gfig wide"><img src="images/green-emerald.jpg" alt="ירוק עמוק"><figcaption>ירוק עמוק — טבע ואמנות</figcaption></figure>
+  </div>
+  <div class="reviews">
+    <div class="rev"><div class="stars">★★★★★</div><p>קיבלתי את המזוזה והיא פשוט יפהפייה — בדיוק כמו בתמונות ואפילו יותר. עבודת יד מושלמת.</p><cite>— דנה, תל אביב</cite></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>השירות אישי והמוצר ברמה אחרת. תליתי בכל הבית.</p><cite>— יוסי, חיפה</cite></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>מתנה שכולם התפעלו ממנה. אין כמו עבודת יד אמיתית.</p><cite>— מירב, ירושלים</cite></div>
+  </div>
+</div></section>
+
+<section id="faq" class="sec"><div class="wrap">
+  <div class="sec-head"><span class="overline">שאלות נפוצות</span><h2>כל מה שרציתם לדעת</h2></div>
+  <div class="faq">
+    <details open><summary>האם המחיר כולל קלף?</summary><div class="ans">המחיר הוא לבית המזוזה בלבד. נשמח להמליץ היכן להשיג קלף כשר. [ערכו לפי הצורך]</div></details>
+    <details><summary>תוך כמה זמן מקבלים את ההזמנה?</summary><div class="ans">זמן אספקה 3–5 ימי עסקים, עם משלוח לכל הארץ. [ערכו לפי הצורך]</div></details>
+    <details><summary>אפשר לבחור גוון?</summary><div class="ans">בהחלט! הדגמים הצבעוניים זמינים במבחר גוונים. כתבו לנו בוואטסאפ והגוון שתבחרו יוכן עבורכם.</div></details>
+  </div>
+</div></section>
+
+<section class="final sec"><div class="wrap"><div class="final-card">
+  <div class="fmedia"><img src="images/epoxy-white.jpg" alt="מזוזות עץ זית ואפוקסי"></div>
+  <div class="ftext"><span class="overline" style="color:#f0d9b8">להזמנה</span><h2>מוכנים לקבוע את המזוזה שלכם?</h2><p>שלחו הודעה אחת בוואטסאפ — נעזור לכם לבחור את הדגם והגוון המושלמים, ונדאג שהמזוזה תגיע אליכם ארוזה ומוכנה לתלייה.</p><a class="btn" data-wa="היי! אשמח להזמין מזוזה ולקבל עזרה בבחירת דגם וגוון 🙂"><svg class="ic"><use href="#wa"/></svg>להזמנה בוואטסאפ</a><div class="reassure">מענה אישי ומהיר · עבודת יד · פריט ייחודי · משלוח לכל הארץ</div></div>
+</div></div></section>
+
+<footer>
+  <div class="fbrand">בית המזוזה</div>
+  <div class="flinks"><a data-wa="היי! אשמח לפרטים על מזוזות בעבודת יד 🙂">וואטסאפ</a><a href="#">אינסטגרם</a><a href="#catalog">הקולקציה</a></div>
+  <small>© בית המזוזה — בתי מזוזה בעבודת יד מעץ זית ואפוקסי</small>
+</footer>
+
+<script>
+  var WA_NUMBER = "972500000000"; // החליפו במספר הוואטסאפ העסקי שלכם
+  document.querySelectorAll("[data-wa]").forEach(function(el){
+    el.href = "https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(el.getAttribute("data-wa"));
+    el.target="_blank"; el.rel="noopener";
+  });
+</script>
+</body>
+</html>

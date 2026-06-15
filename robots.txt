@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap for the GitHub Pages deployment.
+Sitemap: https://avishalomj.github.io/mezuzah-house/sitemap.xml

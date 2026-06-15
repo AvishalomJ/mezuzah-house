@@ -1,0 +1,28 @@
+# --- Local-only secrets & customer data — NEVER publish ---
+admin-config.json
+orders.json
+
+# --- Local editing backups / sources not needed on the live site ---
+index.legacy.html
+
+# --- Python ---
+__pycache__/
+*.pyc
+
+# --- Build / preview scratch ---
+_preview.png
+_crop_preview.png
+_render.py
+_apply_copy.py
+
+# --- OS noise ---
+.DS_Store
+Thumbs.db
+
+# --- Local-only admin UI & build tooling (never publish) ---
+admin.html
+admin-server.py
+build_cms.py
+cms_render.py
+generate_favicon.py
+start-admin.bat
